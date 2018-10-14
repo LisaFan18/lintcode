@@ -22,5 +22,5 @@ notes about solving some problems on https://www.lintcode.com/problem/
 # LintCode/LeetCode solutions in Java and Python 
 | Number        | Title         | Solution      | Note           | Difficulty    | Tag          |
 | ------------- | ------------- | ------------- | -------------  | ------------- |------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell   | Content Cell  | Content Cell |
+| 138| [Word Break](https://leetcode.com/problems/word-break/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/139.%20Word%20Break/solution1.java)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/139.%20Word%20Break)   | Medium  | DP |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell   | Content Cell  | Content Cell |
