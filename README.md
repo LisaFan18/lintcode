@@ -20,8 +20,8 @@ notes about solving some problems on https://www.lintcode.com/problem/
 当然，倒不是要将这份总结页面倒背如流，但是起码能在听到某个题目时，很快想到该用什么数据结构和方法，给自己有一个快而准的开端，会让面试的过程流畅许多，少一些紧张。[from https://zhuanlan.zhihu.com/p/31238421]
 
 # LintCode/LeetCode solutions in Java and Python 
-| Number        | Title         | Solution      | Note           | Difficulty    | Tag          |
-| ------------- | ------------- | ------------- | -------------  | ------------- |------------- |
+| Number| Title         | Solution      | Note           | Difficulty    | Tag          |
+| ------| ------------- | ------------- | -------------  | ------------- |------------- |
 | 1| [Two Sum](https://leetcode.com/problems/two-sum/description/)  | [Java](https://leetcode.com/problems/two-sum/solution/)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/1.%20Two%20Sum)   | Easy  | Array HashMap |
 | 26| [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)   | Easy  | Array Two Pointers |
 | 27| [Remove Element](https://leetcode.com/problems/remove-element/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/27.%20Remove%20Element)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/27.%20Remove%20Element)   | Easy  | Array Two Pointers |
