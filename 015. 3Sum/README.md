@@ -1,8 +1,8 @@
 ## 思考
-1. brute-force 3层for loop，O(n^3) 太暴力，没难度。肯定要超时
+1. brute-force 3层for loop，O(n^3) 太暴力, 肯定要超时. 否掉
 2. 从题干出发：1） “unique”， 每次找到a,b,c candidates 用hashmap check是否重复；2）先用hashmap 把nums扫描一遍。再用2层for loop O(n^2) 
-   结果需要保持2份：hashmap 和 return list<list>
-3. 如果array有序，可以通过comparision排除repeative items。如果有序，two pointers可以从两端向中间靠拢搜索,再加上外面一层for loop O(n^2)。预处理排序需要O(nlgn)。total O(n^2)
+   但是结果需要保持2份：hashmap 和 return list<list>。 否掉
+3. 如果array有序，可以通过comparision排除repeative items。如果有序，two pointers就可以从两端向中间靠拢搜索,再加上外面一层for loop O(n^2)。预处理排序需要O(nlgn)。total O(n^2)
 
 ## summary
 1. 保持unique方案：有序或hashmap
