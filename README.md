@@ -1,9 +1,6 @@
 # LintCode/LeetCode
-notes about solving some problems on https://www.lintcode.com/problem/ 
+notes about solving some problems on [LintCode](https://www.lintcode.com/problem/) and [Leetcode](https://leetcode.com/problemset/algorithms/)
 
-知乎上有两篇很好的高票刷题方法
- 1. https://www.zhihu.com/question/26580300 
- 2. https://www.zhihu.com/question/36738189 
 
 ## 刷题总结：
 1. 打基础： 先按照tag，从easy - medium - hard刷，把每一种data structure的基础夯实，不然刷起来，举步维艰很郁闷
@@ -15,16 +12,22 @@ notes about solving some problems on https://www.lintcode.com/problem/
 3. 多利用碎片时间。例如坐校车或遛娃前先看一个题目放在脑子里，大脑空闲的时候，就开始想解题思路。
 4. 不间断，保持热度，否则事倍功
 
+(From 知乎上[两篇](https://www.zhihu.com/question/26580300 )高票刷题[方法](https://www.zhihu.com/question/36738189))
+ 
+
 ## 目标：
 在真正面试时，听到题目的的时候，能够快速地反应，在脑中找到相应地关键字，再回忆起相应地答案。这个时候，对题目的熟知和关键点的掌握就非常重要。
-当然，倒不是要将这份总结页面倒背如流，但是起码能在听到某个题目时，很快想到该用什么数据结构和方法，给自己有一个快而准的开端，会让面试的过程流畅许多，少一些紧张。[from https://zhuanlan.zhihu.com/p/31238421]
+当然，倒不是要将这份总结页面倒背如流，但是起码能在听到某个题目时，很快想到该用什么数据结构和方法，给自己有一个快而准的开端，会让面试的过程流畅许多，少一些紧张。[from [知乎](https://zhuanlan.zhihu.com/p/31238421)]
 
 # LintCode/LeetCode solutions in Java and Python 
 | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
 | ------| ------------- | ------------- | -------------  | ------------- |------------- |
-| 1| [Two Sum](https://leetcode.com/problems/two-sum/description/)  | [Java](https://leetcode.com/problems/two-sum/solution/)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/1.%20Two%20Sum)   | Easy  | Array HashMap |
-| 26| [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)   | Easy  | Array Two Pointers |
-| 27| [Remove Element](https://leetcode.com/problems/remove-element/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/27.%20Remove%20Element)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/27.%20Remove%20Element)   | Easy  | Array Two Pointers |
+| 001| [Two Sum](https://leetcode.com/problems/two-sum/description/)  | [Java](https://leetcode.com/problems/two-sum/solution/)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/001.%20Two%20Sum)   | Easy  | Array HashMap |
+| 003| [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/003.%20Longest%20Substring%20Without%20Repeating%20Characters)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/003.%20Longest%20Substring%20Without%20Repeating%20Characters)   | Easy  | Array HashMap |
+| 015| [3Sum](https://leetcode.com/problems/3sum/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/015.%203Sum/solution.java)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/015.%203Sum)   | Medium  | Array Two Pointers |
+| 026| [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)   | Medium  | HashTable String Two Pointers |
+| 027| [Remove Element](https://leetcode.com/problems/remove-element/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/027.%20Remove%20Element)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/027.%20Remove%20Element)   | Easy  | Array Two Pointers |
+| 088| [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/088.%20Merge%20Sorted%20Array)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/088.%20Merge%20Sorted%20Array)   | Easy  | Array Two Pointers |
 | 139| [Word Break](https://leetcode.com/problems/word-break/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/139.%20Word%20Break/solution1.java)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/139.%20Word%20Break)   | Medium  | DP |
 | 709| [kth largest element in a stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/description/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/709.%20kth%20largest%20element%20in%20a%20stream/solution.java)  | [Note](https://github.com/LisaFan18/lintcode/blob/master/709.%20kth%20largest%20element%20in%20a%20stream/README.md)   | Easy  | Heap |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell   | Content Cell  | Content Cell |
+
