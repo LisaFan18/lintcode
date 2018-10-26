@@ -19,7 +19,8 @@ Explanation: 11 = 5 + 5 + 1
  
 ## solution 2
 f[i] = -1 表示 no combination 拼出面值i
-注意，f[i] 更新的条件！！
+
+注意，f[i]更新的条件！！
 ```java
 class Solution {
     public int coinChange(int[] coins, int m) {
@@ -40,5 +41,5 @@ class Solution {
 }
 ```
 
-## [solution 1](https://github.com/LisaFan18/lintcode/blob/master/322.%20Coin%20Change/solution1.%20java)
+## [solution 1](https://github.com/LisaFan18/lintcode/blob/master/322.%20Coin%20Change/solution1.java)
 f[i] = Integer.MAX_VALUE 表示 no combination 拼出面值i
