@@ -1,4 +1,4 @@
-```java
+
 class Solution {
     public int coinChange(int[] coins, int m) {
         // 1. amount i can be made up by f[i] combinations 
@@ -26,4 +26,4 @@ class Solution {
         return f[m]; 
     }
 }
-```
+
