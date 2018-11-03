@@ -3,6 +3,11 @@
 2. int[][] f = new int[word1.length + 1][word2.length + 1] 因为字符串数组下标从[0] 开始。
    f[0][0] = 0, f[1][1] 需要判断 word1[1-0] 与 word2[1-0] 是否相等
 
+## 思考
+![Idea Scrath](https://github.com/LisaFan18/lintcode/blob/master/072%20EditDistance/72_EditDistance.JPG "72EditDist")
+
+
+## solution
 ```java
 class Solution {
     public int minDistance(String word1, String word2) {
@@ -13,7 +18,7 @@ class Solution {
         int[][] f = new int[r + 1][c + 1];
         
         f[0][0] = 0;
-        # since f.length = r + 1, thus i <=r 
+        //since f.length = r + 1, thus i <=r 
         for(int i=1; i<=r; i++){
             f[i][0] = i;
         }
@@ -23,7 +28,7 @@ class Solution {
         
         for(int i=1; i<=r; i++){
             for(int j=1; j<=c; j++){
-                # note! array index starts at 0, thus s1[i - 1] == s2[j - 1], NOT s1[i] == s2[j]
+                // note! array index starts at 0, thus s1[i - 1] == s2[j - 1], NOT s1[i] == s2[j]
                 if(s1[i - 1] == s2[j - 1]) {
                     f[i][j] = Math.min(Math.min(f[i-1][j] + 1, f[i][j-1] + 1), f[i-1][j-1]);
                 } else {
