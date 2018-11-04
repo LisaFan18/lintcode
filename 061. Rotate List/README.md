@@ -1,0 +1,30 @@
+## summary
+1. corner case: null/1->null/1->2->null, k = 1
+
+2. note !!! 1->2->3->null, k = 2000000, time limit exceeded 
+solution for time limit exceeded 
+   1. get the total length
+   2. k = k % length, avoid cycle
+
+Ex: {1,2,3} k=2 Move the list after the 1st node to the front
+
+Ex: {1,2,3} k=5, In this case Move the list after (3-5%3=1)st node to the front.
+
+唯一要注意的在于:
+
+如果 k > linklist.size(n) 怎么办？
+
+用示例来表示到底什么叫 rotate the list to the right by k places.
+
+k|	origin|	after
+--- | --- | ---|
+1|	0->1->2| 2->0->1
+2|  0->1->2| 1->2->0
+3|	0->1->2| 0->1->2
+4|  0->1->2| 2->0->1|
+
+可以观察的出来，当 k > n 的时候，k = k % n
+
+参考：
+1. https://leetcode.com/problems/rotate-list/discuss/22715/Share-my-java-solution-with-explanation 
+2. https://github.com/pezy/LeetCode/tree/master/060.%20Rotate%20List 
