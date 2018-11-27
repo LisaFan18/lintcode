@@ -15,7 +15,10 @@ notes about solving some problems on [LintCode](https://www.lintcode.com/problem
 (From 知乎上[两篇](https://www.zhihu.com/question/26580300 )高票刷题[方法](https://www.zhihu.com/question/36738189))
  
 5. 题目分类：https://zhuanlan.zhihu.com/p/25024612 
-6. 网友刷题总结：http://www.cnblogs.com/grandyang/p/4606334.html
+6. 网友刷题总结：
+http://www.cnblogs.com/grandyang/p/4606334.html
+
+http://fisherlei.blogspot.com/ 
 ## 目标：
 在真正面试时，听到题目的的时候，能够快速地反应，在脑中找到相应地关键字，再回忆起相应地答案。这个时候，对题目的熟知和关键点的掌握就非常重要。
 当然，倒不是要将这份总结页面倒背如流，但是起码能在听到某个题目时，很快想到该用什么数据结构和方法，给自己有一个快而准的开端，会让面试的过程流畅许多，少一些紧张。[from [知乎](https://zhuanlan.zhihu.com/p/31238421)]
