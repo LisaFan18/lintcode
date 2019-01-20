@@ -14,8 +14,32 @@ In summary, 看两个值在root的哪边：
 - 两个值都在左边，则LCA在左边  
 - 两个值都在右边，则LCA在右边  
 - 一个在左一个在右，则说明LCA就是当前的root节点。
-
 ## solution 1 (recursion)
+把bst当作binary tree看待  
+```java
+   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {  
+        if(root == null || root == p || root == q){
+            return root;
+        }
+        
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        
+        if(left != null && right != null){
+            return root;
+        }
+        if(left != null){
+            return left;
+        }
+        if(right != null){
+            return right;
+        }
+        
+        return null;
+    }
+```
+## solution 2 (improved recursion)
+solution 2 利用bst的sorted 的property，减少不必要的search
 ```java
    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // base case
@@ -34,7 +58,7 @@ In summary, 看两个值在root的哪边：
     }
 ```
 
-## solution 2 (iteration)
+## solution 3 (iteration)
 类似于binary search， 跟midpoint/root进行compare。
 ```java
    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {  
