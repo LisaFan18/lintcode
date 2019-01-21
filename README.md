@@ -23,7 +23,7 @@ http://fisherlei.blogspot.com/
 在真正面试时，听到题目的的时候，能够快速地反应，在脑中找到相应地关键字，再回忆起相应地答案。这个时候，对题目的熟知和关键点的掌握就非常重要。
 当然，倒不是要将这份总结页面倒背如流，但是起码能在听到某个题目时，很快想到该用什么数据结构和方法，给自己有一个快而准的开端，会让面试的过程流畅许多，少一些紧张。[from [知乎](https://zhuanlan.zhihu.com/p/31238421)]
 
-# LintCode/LeetCode solutions in Java and Python 
+# LintCode/LeetCode solutions  
 | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
 | ------| ------------- | ------------- | -------------  | ------------- |------------- |
 | 001| [Two Sum](https://leetcode.com/problems/two-sum/description/)  | [Java](https://leetcode.com/problems/two-sum/solution/)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/001.%20Two%20Sum)   | Easy  | Array HashMap |
@@ -33,6 +33,7 @@ http://fisherlei.blogspot.com/
 | 026| [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/26.%20Remove%20Duplicate%20from%20Sorted%20Array)   | Medium  | HashTable String Two Pointers |
 | 027| [Remove Element](https://leetcode.com/problems/remove-element/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/027.%20Remove%20Element)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/027.%20Remove%20Element)   | Easy  | Array Two Pointers |
 | 046| [Permutations](https://leetcode.com/problems/permutations/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/046.%20Permutations/REAMDE.md)  | [Note](https://github.com/LisaFan18/lintcode/blob/master/046.%20Permutations/REAMDE.md)   | Medium  | Backtrack |
+| 047| [Permutations II](https://leetcode.com/problems/permutations-ii/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/047.%20Permutations%20II)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/047.%20Permutations%20II)   | Medium  | Backtrack |
 | 062| [Unique Paths](https://leetcode.com/problems/unique-paths/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/062.%20Unique%20Paths)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/062.%20Unique%20Paths)   | Medium  | DP |
 | 063| [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/063.%20Unique%20Paths%20II/solution.java)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/063.%20Unique%20Paths%20II)   | Medium  | DP |
 | 077| [Combinations](https://leetcode.com/problems/combinations/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/077.%20Combinations)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/077.%20Combinations)   | Medium  | Backtrack |
