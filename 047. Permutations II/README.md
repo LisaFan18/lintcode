@@ -1,7 +1,7 @@
 ## Summary
 1. [java.util.Arrays.sort()](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html) This class contains various methods for manipulating arrays (such as sorting and searching).
 2. java.util.ArrayList.contains() 
-3. 去除重复元素：
+3. 去除重复元素：1)排序，2）跳过重复元素
 ```java
             // 跳过重复元素
             if(i>0 && nums[i] == nums[i-1] && !visited[i-1]){
