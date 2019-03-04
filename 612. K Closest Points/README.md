@@ -1,8 +1,39 @@
 ## Summary
 1. Priority自定义Comparator，多层compare方式
-2. int compare(Object o1, Object o2) Returns a negative integer, zero, or a positive integer as the first argument is less than, equal to, or greater than the second.
+2. int compare(Object o1, Object o2) Returns a **negative integer**, zero, or a positive integer as the first argument is **less than**, equal to, or greater than the second.  
+3. PriorityQueue<**int[]**> maxHeap 
+4. brute force method: 1) 把所有distance算出来并排序，得到dist[K-1]作为threshold； 2） iterate all over points，distance < threshold的留下。优点：保留了points的原始顺序，缺点：Time complexity: O(n*logn) 
 
-## Solution 
+## Question on LeetCode
+https://leetcode.com/problems/k-closest-points-to-origin/
+
+## Solution to LeetCode
+```java
+    public int[][] kClosest(int[][] points, int K) {
+        // keep closest, thus use maxHeap instead of minHeap
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((p1, p2) -> p2[0]*p2[0] + p2[1]*p2[1] - p1[0]*p1[0] - p1[1]*p1[1]);
+        
+        // build maxHeap
+        for(int[] p : points){
+            maxHeap.offer(p);
+            if(maxHeap.size()>K){
+                maxHeap.poll();
+            }
+        }
+        
+        // retrieve ans
+        int[][] ans = new int[K][2];
+        while(!maxHeap.isEmpty()){
+            ans[--K] = maxHeap.poll();
+        }
+        
+        return ans;
+    }
+```
+
+## Question on LintCode 
+https://www.lintcode.com/problem/k-closest-points/description 
+## Solution to Lintcode 
 ```java
     public Point[] kClosest(Point[] points, Point origin, int k) {
         // step 1: define the Comparator
