@@ -2,7 +2,12 @@
 1. applications of BFS：  
   * Finding all connected components in a graph/matrix
   * Finding the shortest path between two nodes
-2. in matrix, use dx, dy to traverse matrix easily. 
+2. in matrix, use dx, dy to traverse matrix easily.  
+```java
+	  // right, down, left, up
+		int[] dx = new int[] {0, 1, 0, -1};
+		int[] dy = new int[] {1, 0, -1, 0};
+```
 3. the key thing of BFS is to use **queue**
 
 ## Idea
