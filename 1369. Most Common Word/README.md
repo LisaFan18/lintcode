@@ -5,6 +5,8 @@
 ```java
 String[] words = str.replaceAll("\\pP", " ").toLowerCase().split("\\s+"); // p
 ```
+[Java Regex Pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html#sum) 
+
 2. **Max/Min <K, V> by value**
 ```java
 Collections.max(countMap.entrySet(), Map.Entry.comparingByValue()).getKey();
