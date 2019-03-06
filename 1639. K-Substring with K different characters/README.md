@@ -1,8 +1,13 @@
 ## Summary
+0. sliding window
 1. ```Set<Character> s = new HashSet();```
 2. str.length() not ~~size()~~ 
 3. str.toCharArray() not ~~tocharArray()~~
 4. int i = 0, j = 0; not ~~int i = j = 0;~~
+5. 区分 *Substrings and subsequences*  
+Substrings are *consecutive* subsequences. For example, for sequence *abc* we have  
+ * substrings: a, ab, abc, b, bc, c, and the empty substring;  
+ * subsequences: a, b, ab, c, ac, bc, abc, and the empty subsequence.  
 
 ## 2nd idea 
 1. solution 1 有重复操作，sliding window 移动前后，变化的只有window 两端的elements，window中间的元素不变。
