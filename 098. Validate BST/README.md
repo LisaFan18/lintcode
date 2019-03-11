@@ -1,10 +1,37 @@
 ## Summary
-1. 所有left subtree的elements  必须小于等于 root.val 
-2. 所有right subtree的elements 必须大于   root.val 
-3. 比较当前node.val与全局的upper_limit和lower_limit，而不是node's children. 
-4. how to assign the value of upper/lower limit?   
+1. BST's order property: 比较当前node.val与**全局**的upper_limit和lower_limit，而不是node's children. 
+* 所有left subtree的elements  必须小于等于 root.val 
+* 所有right subtree的elements 必须大于   root.val 
+2. how to assign the value of upper/lower limit?   
    root.val是其left  subtree的upper_limit;  
    root.val是其right subtree的lower_limit; 
+   
+## solution 1 (Min/Max)
+* Algorithm: iterate through the tree and pass down the Min/Max value. When branch left, the max gets updated; when branch right, the min gets updated.
+* Time: O(N) as all N nodes is touched one time. Besides, it's the best algorithm since any algorithm must touch all nodes.
+* Space: O(logN) on a blanced tree as there are up to O(logN) recursive calls on the stack.
+```java
+// Min/Max Solution
+// BST precise definition: all left nodes <= root && root < all right nodes
+public static boolean checkBST(TreeNode root, int min, int max) {
+	// null case
+	if(root == null) {
+		return true;
+	}
+	// base case 
+	if(root.val <= min || root.val > max) {
+		return false;
+	}
+	
+	if(!checkBST(root.left, min, root.val) ||
+	   !checkBST(root.right, root.val, max)	) {
+		return false;
+	}
+	
+	return true;
+}
+```
+   
 ## solution 2 (CORRECT)
 ```java
    public boolean isValidBST(TreeNode root) {
