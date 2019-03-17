@@ -11,12 +11,141 @@
 
 2. 这个题目有3种解法：bfs, dfs, union-find
 
+## Solution (UnionFind)
+### idea
+1. makeSet: scan the 2D grid map, if the cell contains '1', make it a set, counter++;   
+2. union operation: if current cell contains '1' and its neighboor also contains '1', union(current cell, its neighbor) and counter--;  
+3. union operation depends on **find** operation; the return value of find must be parents[i] instead of i.  for example find(1)  
+
+|parent  | 1     | 2      |  3    |   4   | 
+| :-----:|:-----:| :-----:|:-----:|:-----:|
+| index  | 1     | 2      |  3    | 4     |   
+
+   
+```java
+     int find(int i){ // with path compression
+           if(parent[i] != i){
+               parent[i] = find(parent[i]);
+           }    
+           // return i;  // WRONG, why??
+           return parent[i];
+        }
+```
+
+after the operation find with path compression, we get the below result: 
+
+|parent  | 4     | 4      |  4    |   4   | 
+| :-----:|:-----:| :-----:|:-----:|:-----:|
+| index  | 1     | 2      |  3    | 4     | 
+
+if return i => return 1; return parent[i]  => return 4.
+
+4. UnionFind 依赖于两个数组 int[] parents; int[] ranks. 
+
+### code (UnionFind)
+```java 
+class UnionFind {
+        int[] parent; 
+        int[] rank; 
+        int count; 
+        
+        UnionFind(char[][] grid){
+           int row = grid.length;
+           int column = grid[0].length;
+           count = 0;
+           parent = new int[row*column];
+           rank = new int[row*column];
+         
+           for(int i=0; i<row; i++){
+               for(int j=0; j<column; j++){
+                   if(grid[i][j] == '1'){
+                       parent[i*column + j]  = i*column + j;
+                       count++; // count grid[i][j] == '1'
+                   }
+                   rank[i*column + j] = 0; // rank means the number of nodes under "it"
+               }
+           }
+        }
+        
+        int find(int i){ // with path compression
+           if(parent[i] != i){
+               parent[i] = find(parent[i]);
+           }    
+           // return i;  // WRONG, why??
+           return parent[i];
+        }
+        
+        void union(int x, int y){
+            int rootx = find(x);
+            int rooty = find(y);
+            
+            // x, y are not in the same sets; union x and y
+            if(rootx != rooty){
+                if(rank[rootx] < rank[rooty]){
+                    parent[rootx] = rooty;
+                } else {
+                    parent[rooty] = rootx;
+                    // if the heights of rootx and rooty are the same
+                    if(rank[rootx] == rank[rooty]){
+                        rank[rootx] += 1;
+                    }
+                }
+                --count;
+            }
+            
+        }
+        
+        int getCount(){
+            return count;
+        }
+    }
+   
+   public int numIslands(char[][] grid) {
+        // null case
+        if(grid == null || grid.length == 0 || grid[0].length == 0){
+            return 0;
+        }
+        
+        UnionFind uf = new UnionFind(grid);
+        int row = grid.length;
+        int column = grid[0].length;
+        
+        for(int i=0; i<row; i++){
+            for(int j=0; j<column; j++){
+                if(grid[i][j] == '1'){
+                    grid[i][j] = '0';
+                    // check neighboors
+                    if(i-1>=0 && grid[i-1][j] == '1'){
+                       uf.union(i*column + j, (i-1)*column+j);  // i*column + j;  2D index -> 1D index   
+                    }
+                    
+                    if(i+1 < row && grid[i+1][j] == '1'){
+                       uf.union(i*column + j, (i+1)*column+j);    
+                    }
+                    
+                    if(j-1 >=0 && grid[i][j-1] == '1'){
+                       uf.union(i*column + j, i*column + (j-1));    
+                    }
+                    
+                    if(j+1 < column && grid[i][j+1] == '1'){
+                       uf.union(i*column + j, i*column + (j+1));    
+                    }
+                    
+                }
+            }
+        }
+        
+        return uf.getCount();    
+    }
+```
+
 ## Solution (BFS)
+### idea
 linear scan the 2D grid map, if the cell contains '1', then it's a root node that trigles a BFS.  
 * put it into a queue and **mark it as "visited"**  
 * iterately search its neighbors, if the neighbor contains '1', put it into the queue and mark it as "visited"  
 * until the queue is empty. 
-
+### code
 ```java
 public int numIslands(char[][] grid) {
         if(grid == null || grid.length == 0 || grid[0].length == 0){
