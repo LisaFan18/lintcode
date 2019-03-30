@@ -7,8 +7,25 @@
 ## Iterative Method
 ### idea
 1. 首先想到two pointers prev, cur, 利用cur.next = prev 实现 reverse。不过问题来了，链表从cur这里断开分成了two parts 无法实现后续iterate。
-怎么办？ 再加一个pointer next。使用three pointers technique来解决。
+怎么办？ 再加一个pointer next。使用three pointers technique来解决。  
+2. initial prev = null can combine the corner case and common cases; there is no need to declare newHead. 
 
+### solution 1 (cleaner)
+```java
+ public ListNode reverseList(ListNode head) {
+        ListNode prev = null, curr = head; 
+        while(curr != null){
+            ListNode tempNext = cur.next;
+            // reverse
+            cur.next = prev;
+            // move prev, curr to iterate the rest of LL
+            prev = cur;
+            cur = tempNext;
+        }
+        
+        return prev;
+    }
+```
 ### solution 1
 ```java
    public ListNode reverseList(ListNode head) {
