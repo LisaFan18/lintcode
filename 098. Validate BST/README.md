@@ -6,14 +6,19 @@
    root.val是其left  subtree的upper_limit;  
    root.val是其right subtree的lower_limit; 
    
-## solution 1 (Min/Max)
+## solution 1 (Min/Max, One Error)
 * Algorithm: iterate through the tree and pass down the Min/Max value. When branch left, the max gets updated; when branch right, the min gets updated.
 * Time: O(N) as all N nodes is touched one time. Besides, it's the best algorithm since any algorithm must touch all nodes.
 * Space: O(logN) on a blanced tree as there are up to O(logN) recursive calls on the stack.
+* case: [2147483647] couldn't pass. Solution: don't use  Integer.MIN_VALUE, Integer.MAX_VALUE as initial value 
 ```java
 // Min/Max Solution
 // BST precise definition: all left nodes <= root && root < all right nodes
-public static boolean checkBST(TreeNode root, int min, int max) {
+  public boolean isValidBST(TreeNode root) {
+        return checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);  
+   }
+    
+   public boolean checkBST(TreeNode root, int min, int max) {
 	// null case
 	if(root == null) {
 		return true;
@@ -31,8 +36,47 @@ public static boolean checkBST(TreeNode root, int min, int max) {
 	return true;
 }
 ```
+
+## solution 2a_updated (CORRECT)
+```java
+   public boolean isValidBST(TreeNode root) {
+        //return helper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        // case: [2147483647] couldn't pass
+        return helper(root, null, null);
+    }
+    
+    private boolean helper(TreeNode root, Integer min, Integer max){
+        // null case
+        if(root == null){
+            return true;
+        }
+        
+        // base case: 在递去中解决问题
+        if(min != null && root.val <= min){
+            return false;
+        }
+        
+        if(max != null && root.val >= max){
+            return false;
+        }
+        
+        boolean isLeftValid = helper(root.left, min, root.val);
+        // 在归来中解决问题, 减少不必要的check
+        // 如果subtree已经unbalanced, 当前root一定unbalanced
+        if(!isLeftValid){
+            return false;
+        }
+       
+        boolean isRightValid = helper(root.right, root.val, max);
+        if(!isRightValid){
+            return false;
+        }
+          
+        return true;
+    }
+```
    
-## solution 2 (CORRECT)
+## solution 2b (CORRECT)
 ```java
    public boolean isValidBST(TreeNode root) {
         if(root == null){
