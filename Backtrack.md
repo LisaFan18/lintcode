@@ -1,7 +1,7 @@
 # Backtrack
 ## what's backtrack
 
-The below is borrowed from [geeksforgeeks](https://www.geeksforgeeks.org/backtracking-algorithms/)
+Below is borrowed from [geeksforgeeks](https://www.geeksforgeeks.org/backtracking-algorithms/)  
 Backtracking can be defined as a general algorithmic technique that considers searching every **possible combination** in order to solve a **computational problem**.
 
 Backtracking algorithms are generally **exponential** in both time and space 
@@ -30,6 +30,9 @@ void findSolutions(n, other params) :
             findSolutions(n+1, other params);
             removeValue(val, n);
 ```
+## 枚举型DFS
+DFS 模拟嵌套for loop。而且for loop的层数是variable 
+
 
 # Problems
 | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
