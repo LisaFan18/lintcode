@@ -1,0 +1,6 @@
+| Number| Title         | Solution      | Note           | Difficulty    | Tag          |
+| ------| ------------- | ------------- | -------------  | ------------- |------------- |
+| 062| [Unique Paths](https://leetcode.com/problems/unique-paths/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/062.%20Unique%20Paths)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/062.%20Unique%20Paths)   | Medium  | DP |
+| 063| [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/063.%20Unique%20Paths%20II/solution.java)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/063.%20Unique%20Paths%20II)   | Medium  | DP |
+| 139| [Word Break](https://leetcode.com/problems/word-break/)  | [Java](https://github.com/LisaFan18/lintcode/blob/master/139.%20Word%20Break/solution1.java)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/139.%20Word%20Break)   | Medium  | DP |
+| 152| [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)  | [Java](https://github.com/LisaFan18/lintcode/tree/master/152%20Maximum%20Product%20Subarray)  | [Note](https://github.com/LisaFan18/lintcode/tree/master/152%20Maximum%20Product%20Subarray)   | Medium  | Array,DP |
