@@ -31,4 +31,35 @@ class MovingAverage {
 ```
 
 ## solution 2 (circular array)
-// to do
+```java
+class MovingAverage {
+    private int[] queue; 
+    private int sum;
+    private int count;
+    private int head;
+    private int tail;
+    /** Initialize your data structure here. */
+    public MovingAverage(int s) {
+        queue = new int[s];
+        sum = 0;
+        count = 0;
+        head = -1;
+        tail = -1;
+    }
+    
+    public double next(int val) {
+        sum += val;
+        count++;
+        
+        if(count - 1 == queue.length ){
+           // dequeue
+           head = (head + 1) % queue.length;
+           sum -=  queue[head];
+           count--;
+        }
+        tail = (tail + 1) % queue.length;
+        queue[tail] = val;
+        return (double)sum/count;
+    }
+}
+```
