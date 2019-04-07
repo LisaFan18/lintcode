@@ -1,3 +1,20 @@
+ # Queue
+ 1. It's a linear data structure. The principle of processing order is FIFO.  
+ 2. The key points of BFS is to use Queue. 
+ 3. q.offer(), q.poll(), q.peek(), q.size()
+ 4. Initialize: Queue<Integer> q = new LinkedList(); 即使提前知道queue的size，也不能这样initialize Queue<Integer> q = new LinkedList(size) 因为LinkedList的构造函数只有下面这两个。
+ ```java
+ LinkedList(): Constructs an empty list.
+LinkedList(Collection<? extends E> c): Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
+```
+仔细想想，linkedlist的insert操作是通过new一个LinkedlistNode实现。 不是array. java built-in dynamic ArrayList的构造函数如下：
+```java
+ArrayList(): Constructs an empty list with an initial capacity of ten.
+ArrayList(Collection<? extends E> c): Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
+ArrayList(int initialCapacity): Constructs an empty list with the specified initial capacity.
+```
+
+ 
  # Stack 
 1. stack: 处理的数据需要保持last-in first out的顺序。ctrl+z就是基于stack实现的。现实生活stack场景有挤地铁，坐电梯
 2. stack 属于linear 表，本质上跟array和linkedlist没区别。可以理解为阉割后的数组:  
@@ -7,4 +24,6 @@
  # Problems 
  | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
 | ------| ------------- | ------------- | -------------  | ------------- |------------- |
+| 346| [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/)  | Java  | [Note](https://github.com/LisaFan18/lintcode/tree/master/346.%20Moving%20Average%20from%20Data%20Stream)   | EASY  | Queue,sliding window |
+| 622| [Circular Queue](https://leetcode.com/problems/design-circular-queue/)  | Java  | [Note](https://github.com/LisaFan18/lintcode/tree/master/622.%20Design%20Circular%20Queue)   | Medium  | Queue |
 | 155| [Min Stack](https://leetcode.com/problems/min-stack/)  | Java  | [Note](https://github.com/LisaFan18/lintcode/tree/master/155.%20Min%20Stack)   | Medium  | Two stacks or Stack with the difference |
