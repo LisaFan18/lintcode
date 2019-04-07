@@ -1,8 +1,13 @@
  # Queue
  1. It's a linear data structure. The principle of processing order is FIFO.  
  2. The key points of BFS is to use Queue. 
- 3. q.offer(), q.poll(), q.peek(), q.size()
- 4. Initialize: Queue<Integer> q = new LinkedList(); 即使提前知道queue的size，也不能这样initialize Queue<Integer> q = new LinkedList(size) 因为LinkedList的构造函数只有下面这两个。
+ ## implement
+ 1. inefficient way: a dynamic array, a head pointer; drawback: with the movement of head pointer, more and more space is wasted. 
+ 2. efficient way_circular queue: a fixed-size array; two pointers: head, tail; reuse the wasted space
+ 
+ ## usage
+ 1. API: q.offer(), q.poll(), q.peek(), q.size()
+ 2. Initialize: Queue<Integer> q = new LinkedList(); 即使提前知道queue的size，也不能这样initialize Queue<Integer> q = new LinkedList(size) 因为LinkedList的构造函数只有下面这两个。
  ```java
  LinkedList(): Constructs an empty list.
 LinkedList(Collection<? extends E> c): Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
@@ -13,13 +18,36 @@ ArrayList(): Constructs an empty list with an initial capacity of ten.
 ArrayList(Collection<? extends E> c): Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
 ArrayList(int initialCapacity): Constructs an empty list with the specified initial capacity.
 ```
+## BFS
 
  
- # Stack 
+# Stack 
 1. stack: 处理的数据需要保持last-in first out的顺序。ctrl+z就是基于stack实现的。现实生活stack场景有挤地铁，坐电梯
 2. stack 属于linear 表，本质上跟array和linkedlist没区别。可以理解为阉割后的数组:  
 数组支持任意位置的add,delete,update,get    
 但stack只能在一端（top位置）add,delete,update,get
+## implement
+1. easy: a dynamic array is sufficent to implement a stack
+
+## usage
+1. Initialize: Stack<Integer> s = new Stack<>();
+2. API: s.pop(), s.push(), s.peek(), s.size()
+
+## DFS Pseudo code (recursion)
+```java
+void dfs(Node root){
+  // stop case
+  if(root == null){
+     return;
+  }
+  visited(root);
+  for(Node n in root.adjacent){
+    if(n.visited == false){
+       dfs(n);
+    }
+  }
+}
+```
  
  # Problems 
  | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
