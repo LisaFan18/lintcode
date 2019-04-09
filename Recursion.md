@@ -22,4 +22,4 @@
  # Problems 
  | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
 | ------| ------------- | ------------- | -------------  | ------------- |------------- |
-| 155| [Min Stack](https://leetcode.com/problems/min-stack/)  | Java  | [Note](https://github.com/LisaFan18/lintcode/tree/master/155.%20Min%20Stack)   | Medium  | Two stacks or Stack with the difference |
+| 200| [Number of Islands](https://leetcode.com/problems/number-of-islands/)  | Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/200.%20Number%20of%20Islands)   | Medium  | 2DGrid, DFS/BFS/Union Find|
