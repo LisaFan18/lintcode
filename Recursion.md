@@ -1,4 +1,5 @@
 # Recursive Method
+1. Recursion is one of the most powerful and frequent used methods for solving tree related problems.
 ## idea
 1. What's recursive problem? it can be build off of **sub-problems**.  
    * recursive solution are built off solutions to sub-problems.   
