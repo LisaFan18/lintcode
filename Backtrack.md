@@ -30,6 +30,8 @@ void findSolutions(n, other params) :
             findSolutions(n+1, other params);
             removeValue(val, n);
 ```
+神贴 [A general approach](https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)) to backtracking questions in Java (Subsets, Permutations, Combination Sum, Palindrome Partioning)
+
 ## 枚举型DFS
 DFS 模拟嵌套for loop。而且for loop的层数是variable 
 
