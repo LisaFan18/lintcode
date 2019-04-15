@@ -8,11 +8,11 @@
 3. 不考虑元素relative order，使用相向双指针更好理解；relative order cann't be change，使用同向双指针
 4. two pointers: 
    * 同向双指针: 两个pointers都从左边开始, compare右指针和val, increment节奏不一致: 
-    * 右指针遇到无效元素时，right++
-    * 右指针遇到有效元素时不动，利用右指针元素覆盖左指针，并将left++
+      * 右指针遇到无效元素时，right++
+      * 右指针遇到有效元素时不动，利用右指针元素覆盖左指针，并将left++
    * 相向双指针: 两个pointers分别位于两端, compare左指针和val, increment节奏不一致: 
-    * 左指针遇到无效元素时不动，利用右指针元素覆盖。
-    * 左指针遇到有效元素时，left++
+      * 左指针遇到无效元素时不动，利用右指针元素覆盖。
+      * 左指针遇到有效元素时，left++
  
 
 ## solution 1a （同向双指针 with unnecessary copy）
