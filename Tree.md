@@ -152,6 +152,5 @@ public List<Integer> postorderTraversal(TreeNode root) {
 | 236| [Lowest Common Ancestor of a BT](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)  | Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/236.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree)   | Medium  | Tree |
 | 628| [Subtree with Maximum Sum](https://www.lintcode.com/problem/maximum-subtree/description)  | Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/597.%20Subtree%20with%20Maximum%20Average)   | Easy  | Tree, DFS |
 | 597| [Subtree with Maximum Average](https://www.lintcode.com/problem/subtree-with-maximum-average/description)  | Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/597.%20Subtree%20with%20Maximum%20Average)   | Medium  | Tree, DFS |
-
-
+| 104| [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)  | Java | [Note]()   | Easy  | Traversal, Divide and Conqure |
 
