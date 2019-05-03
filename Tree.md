@@ -10,8 +10,8 @@
 2. 分层BFS 多一层for 循环。 int size = q.size(); for(int i=0; i<size; i++){...}
 3. Bi-directional BFS: 如果起点和终点都知道，利用双向BFS来加速。例如word ladder
 ### complexity
-1. Time 通常为O(n) n为node数，通常每个node都要被search 一次
-2. Space 通常为O(w) w为树的宽度。
+1. Time 通常为O(n) n为node数，each node in the tree is added to the queue only once. 
+2. Space 通常为O(w) w为树的宽度。Queue will contain all the nodes in one layer of binary tree. In worse case, for a full binary tree, the leaf layer has n/2 nodes. Thus, space complexity is O(n) 
 
 ## DFS
 ### when
@@ -22,7 +22,7 @@
 2. 分治合法：
 ### complexity
 1. Time 通常为O(n) n为node数，通常每个node都要被search 一次
-2. Space 通常为O(h) h为树的高度。
+2. Space 通常为O(h) h is the height of the tree。because of recursion, O(h) function calls are placed on the stack. In the worst case, O(h) is O(n)
 
 ## Traverse 
 ## Top-down recursion (在递去中解决问题)
