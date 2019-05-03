@@ -1,4 +1,30 @@
 # Summary
+## BFS
+### when
+1. 树or图上的层级遍历 level traverse 例如binary tree level order traversal
+2. 由点及面connected component 例如 islands number
+3. 简单图(edge = 1)的shortest path. 补充：如果是求最长路径，图可以分层采用DP，不能只能采用DFS
+4. 拓扑排序
+### how
+1. BFS基于queue实现。在java里 Queue<> q = new LinkedList<>(). q.offer(); q.poll()
+2. 分层BFS 多一层for 循环。 int size = q.size(); for(int i=0; i<size; i++){...}
+3. Bi-directional BFS: 如果起点和终点都知道，利用双向BFS来加速。例如word ladder
+### complexity
+1. Time 通常为O(n) n为node数，通常每个node都要被search 一次
+2. Space 通常为O(w) w为树的宽度。
+
+## DFS
+### when
+1. 二叉树上的两种情况：求max/min/sum值，求路径问题；二叉树结构的变化例如flatten binary tree
+2. bst上的问题
+### how
+1. 遍历法：有递归和非递归两种实现方式。非递归就是手动模拟stack的过程
+2. 分治合法：
+### complexity
+1. Time 通常为O(n) n为node数，通常每个node都要被search 一次
+2. Space 通常为O(h) h为树的高度。
+
+## Traverse 
 ## Top-down recursion (在递去中解决问题)
 * 类似于preorder traverse。首先visit root计算出部分答案，把答案作为递归函数的paramter传递给chidlren，从上到下一层一层的build answer
 ```java
