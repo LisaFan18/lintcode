@@ -1,10 +1,11 @@
 # Summary
 1. hashtable: k-v pairs; 3 components: key, hashfunction, buckets(Eg: array of linkedlist) 
 2. hash function: used to convert the key into an integer within \[0, HASH_SIZE). 
-index = hashFunction(key)%hash_size. 同一个key得到相同的index；但不保证不同的key得到相同的index 即collision
+   index = hashFunction(key)%hash_size. 同一个key得到相同的index；但不保证不同的key得到相同的index 即collision
 3. collision resolution: 
 * [open hashing](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html) (jdk 采用这种方式)
 * [closed hashing](https://www.cs.usfca.edu/~galles/visualization/ClosedHash.html) 
+4. [rehashing](https://github.com/LisaFan18/lintcode/tree/master/129.%20Rehashing)
 
 ## Implementation 
 1. 基于Array of linkedList来实现，也即是说Array里的元素是ListNode, 由于hashmap保存的是<k,v>pair,所以ListNode likes this
@@ -35,6 +36,11 @@ index = hashFunction(key)%hash_size. 同一个key得到相同的index；但不�
        return (int)ans%HASH_SIZE;
     }
 ```
+3. rehashing 
+* 什么时候扩容？Java 默认采用75% (load factor)。trade-off: load factor越小，collision的可能性越小，get/put效率越高，但存储空间越大。
+* 怎么扩容？ 思想类似于Java里 dynamic ArrayList的思想 double its original size。不过ArrayList只是简单的copy: 而rehashing需要对所有元素都重新计算index。因为index依赖于bucket 的size，如果size is doubled，所有的index都需要重新计算。因此 rehashing 是个很费时的操作。
+
+
 ## Hash Function
 1. Hash function
  * 固定无规律的"整数"：固定表示同一个key对应到相同的位置；无规律减少collision; 整数%hash_size对应到index。
@@ -61,6 +67,7 @@ index = hashFunction(key)%hash_size. 同一个key得到相同的index；但不�
 | ------| ------------- | ------------- | -------------  | ------------- |------------- |
 | 706 | [Design HashMap](https://leetcode.com/problems/design-hashmap/)| Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/706.%20Design%20HashMap) |  Easy  | HashMap, LinkedList |
 | 128 | [Hash Function](https://www.lintcode.com/problem/hash-function/description)| Java | Note |  Easy  | Hash Function |
+| 129 | [ReHashing](https://www.lintcode.com/problem/rehashing/description)| Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/129.%20Rehashing) |  Medium  | ReHash, Doubling |
 
 
 
