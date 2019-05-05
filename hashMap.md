@@ -2,7 +2,9 @@
 1. hashtable: k-v pairs; 3 components: key, hashfunction, buckets(Eg: array of linkedlist) 
 2. hash function: used to convert the key into an integer within \[0, HASH_SIZE). 
 index = hashFunction(key)%hash_size. 同一个key得到相同的index；但不保证不同的key得到相同的index 即collision
-3. collision resolution: open hashing (jdk 采用这种方式); close hashing. 
+3. collision resolution: 
+* [open hashing](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html) (jdk 采用这种方式)
+* [closed hashing](https://www.cs.usfca.edu/~galles/visualization/ClosedHash.html) 
 
 ## Implementation 
 1. 基于Array of linkedList来实现，也即是说Array里的元素是ListNode, 由于hashmap保存的是<k,v>pair,所以ListNode likes this
