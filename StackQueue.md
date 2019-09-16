@@ -6,8 +6,8 @@
  2. efficient way_circular queue: a fixed-size array; two pointers: head, tail; reuse the wasted space
  
  ## usage
- 1. API: q.offer(), q.poll(), q.peek(), q.size()
- 2. Initialize: Queue<Integer> q = new LinkedList(); 即使提前知道queue的size，也不能这样initialize Queue<Integer> q = new LinkedList(size) 因为LinkedList的构造函数只有下面这两个。
+ 1. (Best): Deque<Integer> dq = new ArrayDeque<>(); API: q.offer(), q.poll(), q.peek(), q.size(). 
+ 2. (Not recommended): Queue<Integer> q = new LinkedList<>(); 即使提前知道queue的size，也不能这样initialize Queue<Integer> q = new LinkedList(size) 因为LinkedList的构造函数只有下面这两个。
  ```java
  LinkedList(): Constructs an empty list.
 LinkedList(Collection<? extends E> c): Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
@@ -27,11 +27,12 @@ ArrayList(int initialCapacity): Constructs an empty list with the specified init
 数组支持任意位置的add,delete,update,get    
 但stack只能在一端（top位置）add,delete,update,get
 ## implement
-1. easy: a dynamic array is sufficent to implement a stack
+1. easy/best: a dynamic array is sufficent to implement a stack
+2. based on linked list: insert the new item at the head/top of the linkedlist. 
 
 ## usage
-1. Initialize: Stack<Integer> s = new Stack<>();
-2. API: s.pop(), s.push(), s.peek(), s.size()
+1. ~(deprecated) Stack<Integer> s = new Stack<>(); API: s.pop(), s.push(), s.peek(), s.size()~
+2. Deque<Integer> stack = new ArrayDeque<>(); API: s.pop(), s.push(), s.peek(), s.size().
 
 ## DFS Pseudo code (recursion)
 ```java
@@ -48,6 +49,18 @@ void dfs(Node root){
   }
 }
 ```
+ # ArrayDeque
+1. An ArrayDeque (also known as an “Array Double Ended Queue”, pronounced as “ArrayDeck”) is a special kind of a growable array that allows us to add or remove an element from both sides
+2. [How's ArrayDeque implemented?](https://www.baeldung.com/java-array-deque) 
+ * ArrayDeque is backed by an array which **doubles its size** when it gets filled.
+ * Initially, the array is initialized with a size of 16. 
+ * It's implemented as a **double-ended queue** where it maintains **two pointers namely a head and a tail**.
+3. [ArrayDeque is the fastest Queue Implementation](https://stackoverflow.com/questions/6129805/what-is-the-fastest-java-collection-with-the-basic-functionality-of-a-queue)
+ * ArrayDeque doesn't have the overhead of node allocations that LinkedList does 
+ * ArrayDeque doesn't have the overhead of shifting the array contents left on remove that ArrayList has
+4. [Why I should use Deque over Stack](https://stackoverflow.com/questions/12524826/why-should-i-use-deque-over-stack)
+ * Javadoc says: Deques can also be used as LIFO (Last-In-First-Out) stacks. This interface should be used in preference to the legacy Stack class.
+ * Deque.iterator() has a reverse iteartion order; Deque.descendingIterator(). eg. deque.push(1);deque.push(2);deque.push(3);   System.out.println(new ArrayList<>(deque)); // prints 3, 2, 1 
  
  # Problems 
  | Number| Title         | Solution      | Note           | Difficulty    | Tag          |
