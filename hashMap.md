@@ -2,9 +2,11 @@
 1. hashtable: k-v pairs; 3 components: key, hashfunction, buckets(Eg: array of linkedlist) 
 2. hash function: used to convert the key into an integer within \[0, HASH_SIZE). 
    index = hashFunction(key)%hash_size. 同一个key得到相同的index；但不保证不同的key得到相同的index 即collision
-3. collision resolution: 
-* [open hashing](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html) (jdk 采用这种方式)
-* [closed hashing](https://www.cs.usfca.edu/~galles/visualization/ClosedHash.html) 
+3. [Collision Resolution](http://www.cs.cmu.edu/~ab/15-121N11/lectures/lecture16.pdf): 
+* Chaining [Visualization](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html) (jdk 采用这种方式)
+* Open Addressing Techniques [Visualization](https://www.cs.usfca.edu/~galles/visualization/ClosedHash.html) 
+  * Linear Probing
+  * Quadratic Probing
 4. [rehashing](https://github.com/LisaFan18/lintcode/tree/master/129.%20Rehashing)
 
 ## Implementation 
@@ -24,7 +26,7 @@
 2. 一个好的hash function的标准：
 * minize collision. a good hash function can avoid collision as less as possible. 
 * easy to compute, 常见算法有hashcode("abcd") = (ascii(a) * 333 + ascii(b) * 332 + ascii(c) *33 + ascii(d)) % HASH_SIZE 
-* distributed key values evenly in the hash table
+* distributed key values **evenly** in the hash table
 ```java
   public int hashCode(char[] key, int HASH_SIZE) {
        long ans=0;
@@ -39,6 +41,26 @@
 3. rehashing 
 * 什么时候扩容？Java 默认采用75% (load factor)。trade-off: load factor越小，collision的可能性越小，get/put效率越高，但存储空间越大。
 * 怎么扩容？ 思想类似于Java里 dynamic ArrayList的思想 double its original size。不过ArrayList只是简单的copy: 而rehashing需要对所有元素都重新计算index。因为index依赖于bucket 的size，如果size is doubled，所有的index都需要重新计算。因此 rehashing 是个很费时的操作。
+
+## HashMap, LinkedHashMap, TreeMap, HashTable
+1. [How does Java HashMap handle collisions](https://javarevisited.blogspot.com/2016/01/how-does-java-hashmap-or-linkedhahsmap-handles.html)
+* Prior to Java8, handle collison by Chaining: 
+  * If a key end up in same bucket location where an entry is already stored then this entry is just added at the **head** of the linked list there.
+  * In worst case, frequent HashMap collision happens, it degrades the performance of get() to O(n) from O(1)
+* Java 8 uses a balanced tree instead of linked list for storing collided entries. 
+  * In worst case, the performance of get() boost to O(logn) from O(n)
+  * TREEIFY_THRESHOLD is the threshold of switching to the balanced tree. Currently, it's value is 8, which means if there are more than 8 elements in the same bucket than HashMap will use a tree instead of linked list to hold them in the same bucket. 
+2. [Difference between HashMap, LinkedHashMap, TreeMap and HashTable](https://javarevisited.blogspot.com/2015/08/difference-between-HashMap-vs-TreeMap-vs-LinkedHashMap-Java.html)
+* HashMap 
+   * based on buckets, allowed null key, efficiency O(1)
+   * doesn't provide any ordering guarantee for entries, 
+* LinkedHashMap 
+  * based double linkedlist of buckets, allowed null key, efficiency O(1)
+  * sorted according to the insertion order,  
+* TreeMap 
+  * based on red-black tree, not allowed null key,efficiency O(logn)
+  * sorted according to natural order of keys; 
+* HashTable is obsolete, use ConcurrentHashMap
 
 
 ## Hash Function
@@ -68,6 +90,4 @@
 | 706 | [Design HashMap](https://leetcode.com/problems/design-hashmap/)| Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/706.%20Design%20HashMap) |  Easy  | HashMap, LinkedList |
 | 128 | [Hash Function](https://www.lintcode.com/problem/hash-function/description)| Java | Note |  Easy  | Hash Function |
 | 129 | [ReHashing](https://www.lintcode.com/problem/rehashing/description)| Java | [Note](https://github.com/LisaFan18/lintcode/tree/master/129.%20Rehashing) |  Medium  | ReHash, Doubling |
-
-
 
